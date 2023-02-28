@@ -9,9 +9,11 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 // MAP //
+// Function: creates new array inheriting the results 
+// of callbackFn on every element in the calling array.
 Array.prototype.myMap = function(callbackFn) {
   let result = [];
-  for(let x = 0; x < this.length;x++) {
+  for(let x = 0; x < this.length; x++) {
     if(this[x] === undefined) continue; 
       result.push(callbackFn(this[x],x,this));
   }
@@ -19,8 +21,19 @@ Array.prototype.myMap = function(callbackFn) {
 };
 
 // FILTER //
+// Function: creates shallow copy of a portion of the 
+// calling array, filtered to contain only the elements 
+// from the calling array that pass the test implemented 
+// by the provided function.
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+  let result = [];
+  for(let x = 0; x < this.length; x++) {
+    if(this[x] === undefined) continue; 
+      if(callbackFn(this[x],x,this) == true) {
+        result.push(this[x]);
+      }
+  }
+  return result;  
 };
 
 // SOME //
