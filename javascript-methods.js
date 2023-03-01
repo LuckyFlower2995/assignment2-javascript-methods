@@ -36,9 +36,18 @@ Array.prototype.myFilter = function(callbackFn) {
   return result;  
 };
 
-// SOME //
+// SOME ///
+// Function: Returns true if there is at least one element
+// in the array that passes the test implemented by the 
+// provided function, otherwise return false.
 Array.prototype.mySome = function(callbackFn) {
-  // Place your code here.
+  for(let x = 0; x < this.length; x++) {
+    if(this[x] === undefined) continue; 
+      if(callbackFn(this[x],x,this) == true) {
+        return true;
+      }
+  }
+  return false;
 };
 
 // EVERY //
