@@ -65,8 +65,23 @@ Array.prototype.myEvery = function(callbackFn) {
 };
 
 // REDUCE //
+// Function: returns the sum of all the elements in 
+// an array. If an initialValue is specified, the 
+// reducer starts on array[1], otherwise it starts on
+// array[0].
 Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+  let result = 0;
+  let index = 0;
+  if(arguments[1] === undefined) {
+    result = this[0];
+    index = 1;
+  } else { result = arguments[1]; }
+  
+  for(let x = index; x < this.length; x++) {
+    if(this[x] === undefined) continue; 
+      result = callbackFn(result,this[x],x,array);
+  }
+  return result;
 };
 
 // INCLUDES //
@@ -93,3 +108,4 @@ Object.myKeys = function(object) {
 Object.myValues = function(object) {
   // Place your code here.
 };
+
