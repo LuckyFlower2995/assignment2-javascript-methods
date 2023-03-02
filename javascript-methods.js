@@ -98,8 +98,16 @@ Array.prototype.myIncludes = function(searchElement) {
 };
 
 // INDEXOF //
+// Function: returns the first index at where a given
+// element can be found in the array.
 Array.prototype.myIndexOf = function(searchElement) {
-  // Place your code here.
+  for(let x = 0; x < this.length; x++) {
+    if(this[x] === undefined) continue; 
+      if(this[x] == searchElement) {
+        return x;
+      }
+  }
+  return -1; 
 };
 
 // LASTINDEXOF //
