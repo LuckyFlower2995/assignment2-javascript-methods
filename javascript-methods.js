@@ -85,8 +85,16 @@ Array.prototype.myReduce = function(callbackFn) {
 };
 
 // INCLUDES //
+// Function: returns true if array contains a certain 
+// value.
 Array.prototype.myIncludes = function(searchElement) {
-  // Place your code here.
+  for(let x = 0; x < this.length; x++) {
+    if(this[x] === undefined) continue; 
+      if(this[x] == searchElement) {
+        return true;
+      }
+  }
+  return false; 
 };
 
 // INDEXOF //
