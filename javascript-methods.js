@@ -99,7 +99,7 @@ Array.prototype.myIncludes = function(searchElement) {
 
 // INDEXOF //
 // Function: returns the first index at where a given
-// element can be found in the array.
+// element can be found in the array, otherwise return -1.
 Array.prototype.myIndexOf = function(searchElement) {
   for(let x = 0; x < this.length; x++) {
     if(this[x] === undefined) continue; 
@@ -111,8 +111,17 @@ Array.prototype.myIndexOf = function(searchElement) {
 };
 
 // LASTINDEXOF //
+// Function: returns the last index at where a given 
+// element can be found in the array, otherwise return -1.
 Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+  let result = -1;
+  for(let x = 0; x < this.length; x++) {
+    if(this[x] === undefined) continue; 
+      if(this[x] == searchElement) {
+        result = x;
+      }
+  }
+  return result;
 };
 
 // KEYS //
