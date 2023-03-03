@@ -136,20 +136,12 @@ Object.myKeys = function(object) {
 };
 
 // VALUES //
+// Function: returns array of a given object's property
+// values.
 Object.myValues = function(object) {
-  // Place your code here.
+  let result = [];
+  for(let element in object) {
+    result.push(object[element]);
+  }
+  return result;
 };
-
-let object = {
-  "100": "a",
-  2: "b",
-  7: "c"
-};
-
-console.log(Object.myKeys(object));
-console.log(Object.keys(object));
-
-console.log(Object.myKeys(100));
-console.log(Object.keys(100));
-
-
